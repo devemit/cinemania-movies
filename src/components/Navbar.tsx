@@ -10,35 +10,30 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className='flex items-center justify-between py-6 px-8'>
+      <div className='flex items-center justify-between py-6 px-8 absolute z-10 w-full'>
         <div className='z-10'>
-          <h1 className='text-3xl md:text-4xl text-emerald-400 uppercase font-bold'>
+          <Link
+            to='/'
+            className='text-3xl md:text-4xl text-emerald-400 uppercase font-bold'
+          >
             Cinemania
-          </h1>
+          </Link>
         </div>
-        {/* list */}
-        <ul className='hidden md:flex text-white gap-6 text cursor-pointer uppercase'>
-          <Link to='/' className='hover:text-emerald-400 focus:text-emerald-400'>
-            Home
-          </Link>
-          <Link to='/tvshows' className='hover:text-emerald-400 focus:text-emerald-400'>
-            Tv Shows
-          </Link>
-          <Link to='/movies' className='hover:text-emerald-400 focus:text-emerald-400'>
-            Movies
-          </Link>
-          <Link to='/upcoming' className='hover:text-emerald-400 focus:text-emerald-400'>
-            Upcoming
-          </Link>
-        </ul>
+
         {/* buttons */}
         <div className='md:flex hidden'>
-          <button className='px-5 py-1.5 bg-emerald-400 text-white mx-1 rounded-xl '>
+          <Link
+            to='/login'
+            className='px-5 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-white mx-1 rounded-xl '
+          >
             Login
-          </button>
-          <button className='px-5 py-1.5 bg-white text-emerald-500 mx-1 rounded-xl '>
+          </Link>
+          <Link
+            to='/register'
+            className='px-5 py-1.5 bg-slate-100 hover:bg-white text-emerald-500 mx-1 rounded-xl '
+          >
             Register
-          </button>
+          </Link>
         </div>
 
         {/* open/close menu */}
@@ -53,48 +48,29 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? 'md:hidden fixed flex flex-col w-full h-full left-0 rounded-b-3xl top-0 pt-20 px-6 bg-slate-100/90 uppercase ease-in-out duration-500'
+              ? 'md:hidden fixed flex flex-col w-full h-[250px] left-0 rounded-b-3xl top-0 pt-20 px-6 bg-slate-200 uppercase ease-in-out duration-500'
               : 'fixed top-[-100%]'
           }
         >
-          <ul className='cursor-pointer'>
-            <Link
-              to='/'
-              className='border-b-2 border-gray-400 p-2 font-semibold hover:text-emerald-400'
-            >
-              Home
-            </Link>
-            <Link
-              to='/tvshows'
-              className='border-b-2 border-gray-400 p-2 font-semibold hover:text-emerald-400'
-            >
-              Tv Shows
-            </Link>
-            <Link
-              to='/movies'
-              className='border-b-2 border-gray-400 p-2 font-semibold hover:text-emerald-400'
-            >
-              Movies
-            </Link>
-            <Link
-              to='/upcoming'
-              className='border-b-2 border-gray-400 p-2 font-semibold hover:text-emerald-400'
-            >
-              Upcoming
-            </Link>
+          <ul onClick={() => setNav(false)} className='cursor-pointer flex flex-col'>
+            {/* mobile buttons */}
+            <div className='flex flex-col py-4'>
+              <Link
+                to='/login'
+                className='px-5 py-2 w-full bg-emerald-900 hover:bg-emerald-700 text-white mx-1 rounded-xl my-2'
+              >
+                Login
+              </Link>
+              <Link
+                to='/register'
+                className='px-5 py-2 w-full bg-white hover:bg-slate-100 text-emerald-600 mx-1 rounded-xl my-1'
+              >
+                Register
+              </Link>
+            </div>
           </ul>
-          {/* mobile buttons */}
-          <div className='flex flex-col py-4'>
-            <button className='px-5 py-2 w-full bg-emerald-500 text-white mx-1 rounded-xl my-2'>
-              Login
-            </button>
-            <button className='px-5 py-2 w-full bg-white text-emerald-400 mx-1 rounded-xl my-1'>
-              Register
-            </button>
-          </div>
         </div>
       </div>
-      <hr className=' border-gray-200 ' />
     </>
   );
 };

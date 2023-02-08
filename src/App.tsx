@@ -1,9 +1,8 @@
 import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import TvShows from './pages/TvShow';
-import Movies from './pages/Movies';
-import Upcoming from './pages/Upcoming';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const App = () => {
   return (
@@ -11,9 +10,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='tvshows' element={<TvShows />} />
-        <Route path='movies' element={<Movies />} />
-        <Route path='upcoming' element={<Upcoming />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </>
   );
