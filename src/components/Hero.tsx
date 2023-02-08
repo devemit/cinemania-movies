@@ -11,7 +11,6 @@ const Hero = () => {
   useEffect(() => {
     axios.get(requests.requestPopular).then((res) => {
       setMovies(res.data.results);
-      // console.log(movie);
     });
   }, []);
 

@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Movie from './Movie';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-const Row = ({ title, getUrl }: { title: string; getUrl: any }) => {
+type Movie = {
+  title: string;
+  getUrl: any;
+};
+
+const Row = ({ title, getUrl }: Movie) => {
   const [trendingMovies, setTrendingMovies] = useState<any[]>([]);
   useEffect(() => {
     axios.get(getUrl).then((res) => {
