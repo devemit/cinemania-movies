@@ -5,7 +5,7 @@
 - ReactJS
 - TailwindCSS
 - React Hooks
-- IMBD API
+- TMBD API
 - React Icons
 - React Router
 - Axios
