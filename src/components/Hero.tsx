@@ -41,7 +41,9 @@ const Hero = () => {
             <AiOutlinePlus size={30} />
           </button>
         </div>
-        <p className='text-gray-300 text-lg my-4 '>{truncateStr(movie?.overview, 180)}</p>
+        <p className='text-gray-300 text-lg my-4 max-w-md '>
+          {truncateStr(movie?.overview, 180)}
+        </p>
       </div>
     </div>
   );
